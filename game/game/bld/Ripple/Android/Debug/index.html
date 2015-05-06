@@ -59,12 +59,32 @@
             /*
                 INITIALIZE BOXES
             */
-            for (var x = 0; x < 10; x++) {
-                for (var y = 0; y < 10; y++) {
+            var pos_y_add = 0;
+            for (var x = 0; x < 11; x++) {
+                for (var y = 0; y < 11; y++) {
+
+                    if (((x - 1) * 11) + y >= 0) {
+                        var smaller;
+                        var larger;
+                        if (boxes[((x - 1) * 11) + y].position.y < boxes[(x * 11) + (y - 1)].position.y) {
+                            smaller = boxes[((x - 1) * 11) + y].position.y;
+                            larger = boxes[(x * 11) + (y - 1)].position.y;
+                        } else {
+                            larger = boxes[((x - 1) * 11) + y].position.y;
+                            smaller = boxes[(x * 11) + (y - 1)].position.y;
+                        }
+
+                        if ((larger-smaller)%4 == 0) pos_y_add = smaller + (larger - smaller) / 2
+                    }
+
+                    var rand = Math.random()
+                    if (rand > 0.85) pos_y_add += 2;
+                    else if (rand > 0.7) pos_y_add -= 2;
+
                     boxes.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
-                    boxes[(x * 10) + y].position.z = (y-5) * 2;
-                    boxes[(x * 10) + y].position.x = (x - 5) * 2;
-                    boxes[(x * 10) + y].position.y += Math.random() * 5;
+                    boxes[(x * 11) + y].position.z = (y-5.5) * 2;
+                    boxes[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    boxes[(x * 11) + y].position.y += pos_y_add;
                 }
             }
             //var box = BABYLON.Mesh.CreateBox("box1", 2, scene);
@@ -81,8 +101,8 @@
 
                 for (var x = 0; x < 5; x++) {
                     for (var y = 0; y < 5; y++) {
-                        boxes[(x * 5) + y].rotation.x += 0.01;
-                        boxes[(x * 5) + y].rotation.z += 0.02;
+                        //boxes[(x * 5) + y].rotation.x += 0.01;
+                        //boxes[(x * 5) + y].rotation.z += 0.02;
                     }
                 }
                 //sphere.position = new BABYLON.Vector3(Math.cos(alpha) * 30, 10, Math.sin(alpha) * 30);
