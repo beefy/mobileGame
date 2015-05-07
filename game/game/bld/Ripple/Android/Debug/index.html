@@ -90,6 +90,20 @@
                     boxes[(x * 11) + y].position.x = (x - 5.5) * 2;
                     boxes[(x * 11) + y].position.y += pos_y_add;
 
+                    //ADD MAIN CHARACTER
+                    if (x == 5 && y == 5) {
+                        var main_char = BABYLON.Mesh.CreateCylinder("main_char", 6, 1.5, 1.5, 20, 1, scene);
+                        main_char.position.y += pos_y_add + 1;
+                        main_char.position.z = (y - 5.5) * 2;
+                        main_char.position.x = (x - 5.5) * 2;
+
+                        var materialBox = new BABYLON.StandardMaterial("texture1", scene);
+                        materialBox.diffuseColor = new BABYLON.Color3(1, 0, 0);
+
+                        //Applying materials
+                        main_char.material = materialBox;
+                    }
+
                     //INITIALIZE BOTTOM BOXES
                     bot_boxes_1.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
                     bot_boxes_1[(x * 11) + y].position.z = (y - 5.5) * 2;

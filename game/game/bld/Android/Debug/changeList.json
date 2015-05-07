@@ -1,6 +1,7 @@
 {
   "changedFilesIos": [
-    "index.html"
+    "index.html",
+    "textures\\red.png"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [],
