@@ -58,6 +58,9 @@
             var bot_boxes_1 = [];
             var bot_boxes_2 = [];
             var bot_boxes_3 = [];
+            var bot_boxes_4 = [];
+            var bot_boxes_5 = [];
+            var bot_boxes_6 = [];
 
             /*
                 INITIALIZE BOXES
@@ -117,6 +120,18 @@
                     bot_boxes_3[(x * 11) + y].position.z = (y - 5.5) * 2;
                     bot_boxes_3[(x * 11) + y].position.x = (x - 5.5) * 2;
                     bot_boxes_3[(x * 11) + y].position.y += pos_y_add - 6;
+                    bot_boxes_4.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
+                    bot_boxes_4[(x * 11) + y].position.z = (y - 5.5) * 2;
+                    bot_boxes_4[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    bot_boxes_4[(x * 11) + y].position.y += pos_y_add - 8;
+                    bot_boxes_5.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
+                    bot_boxes_5[(x * 11) + y].position.z = (y - 5.5) * 2;
+                    bot_boxes_5[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    bot_boxes_5[(x * 11) + y].position.y += pos_y_add - 10;
+                    bot_boxes_6.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
+                    bot_boxes_6[(x * 11) + y].position.z = (y - 5.5) * 2;
+                    bot_boxes_6[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    bot_boxes_6[(x * 11) + y].position.y += pos_y_add - 12;
                 }
             }
             //var box = BABYLON.Mesh.CreateBox("box1", 2, scene);
