@@ -55,6 +55,9 @@
 
             // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
             var boxes = [];
+            var bot_boxes_1 = [];
+            var bot_boxes_2 = [];
+            var bot_boxes_3 = [];
 
             /*
                 INITIALIZE BOXES
@@ -63,6 +66,7 @@
             for (var x = 0; x < 11; x++) {
                 for (var y = 0; y < 11; y++) {
 
+                    //DETERMINE HEIGHT OF TOP BOXES
                     if (((x - 1) * 11) + y >= 0) {
                         var smaller;
                         var larger;
@@ -85,6 +89,20 @@
                     boxes[(x * 11) + y].position.z = (y-5.5) * 2;
                     boxes[(x * 11) + y].position.x = (x - 5.5) * 2;
                     boxes[(x * 11) + y].position.y += pos_y_add;
+
+                    //INITIALIZE BOTTOM BOXES
+                    bot_boxes_1.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
+                    bot_boxes_1[(x * 11) + y].position.z = (y - 5.5) * 2;
+                    bot_boxes_1[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    bot_boxes_1[(x * 11) + y].position.y += pos_y_add - 2;
+                    bot_boxes_2.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
+                    bot_boxes_2[(x * 11) + y].position.z = (y - 5.5) * 2;
+                    bot_boxes_2[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    bot_boxes_2[(x * 11) + y].position.y += pos_y_add - 4;
+                    bot_boxes_3.push(BABYLON.Mesh.CreateBox("box1", 2, scene))
+                    bot_boxes_3[(x * 11) + y].position.z = (y - 5.5) * 2;
+                    bot_boxes_3[(x * 11) + y].position.x = (x - 5.5) * 2;
+                    bot_boxes_3[(x * 11) + y].position.y += pos_y_add - 6;
                 }
             }
             //var box = BABYLON.Mesh.CreateBox("box1", 2, scene);
