@@ -45,19 +45,11 @@
             camera.upperRadiusLimit = 150;
             camera.attachControl(canvas, true);
 
-            //// This targets the camera to scene origin
-            //camera.setTarget(BABYLON.Vector3.Zero());
-
-            //// This attaches the camera to the canvas
-            //camera.attachControl(canvas, true);
-
-            // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
+            // This creates a light
             var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0.5, 0.5, 0.5), scene);
-
-            // Default intensity is 1. Let's dim the light a small amount
             light.intensity = 0.7;
 
-            // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
+            // Initialize Boxes
             var boxes = [];
             var bot_boxes_1 = [];
             var bot_boxes_2 = [];
@@ -138,13 +130,17 @@
                     bot_boxes_6[(x * 11) + y].position.y += pos_y_add - 12;
                 }
             }
-            //var box = BABYLON.Mesh.CreateBox("box1", 2, scene);
 
-            // Move the sphere upward 1/2 its height
-            //box.position.y = 1;
+            //MOVEMENT ARROWS
+            //var spriteManagerArrows = new BABYLON.SpriteManager("MovementArrows", "textures/arrows.png", 400, 400, scene);
+            //arrows = new BABYLON.Sprite("tree", spriteManagerArrows);
+            //tree.position.x = Math.random() * 100 - 50;
+            //tree.position.z = Math.random() * 100 - 50;
 
-            // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-            //var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+            //PLAYER SPRITE
+            //
+            //
+
 
             // Animations
             var alpha = 0;
