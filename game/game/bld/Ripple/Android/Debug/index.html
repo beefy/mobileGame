@@ -39,6 +39,10 @@
             // Setup camera
             var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, BABYLON.Vector3.Zero(), scene);
             camera.setPosition(new BABYLON.Vector3(-30, 30, 30));
+            camera.lowerBetaLimit = 0.1;
+            camera.upperBetaLimit = (Math.PI / 2) * 0.9;
+            camera.lowerRadiusLimit = 30;
+            camera.upperRadiusLimit = 150;
             camera.attachControl(canvas, true);
 
             //// This targets the camera to scene origin
